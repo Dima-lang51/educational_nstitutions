@@ -1,0 +1,44 @@
+@import "style";
+// Переменные, миксины, функции
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+// CSS-файлы библиотек
+@import "vendor/libs";
+
+// Основное
+@import "base/fonts";
+@import "base/general";
+
+// БЭМ-блоки
+@import "../blocks/modules";
+
+
+/*Обнуление */
+
+p {
+    margin: 0;
+  }
+
+li {
+  list-style-type: none;
+}
+  
+
+@media (min-width: $mediaxl) {
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: $withxl;
+}
+}
+
+
+.container, .container-sm {
+  @include media("max", "sm") {
+    max-width: 576px;
+    /* margin: 16px; */
+    padding-left: 16px;
+    padding-right: 16px;
+
+  }
+}
